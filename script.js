@@ -1,3 +1,4 @@
+const wordlenumber = document.querySelector('#wordlenumber');
 (this.wordle = this.wordle || {}),
   (this.wordle.bundle = (function (e) {
     "use strict";

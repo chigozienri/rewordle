@@ -1163,6 +1163,7 @@ const wordlenumber = document.querySelector('#wordlenumber');
                 r[o] = t[a + o];
               o = -1;
               for (var i = Array(a + 1); ++o < a; ) i[o] = t[o];
+              
               return (i[a] = s(r)), ma(e, this, i);
             }
           );

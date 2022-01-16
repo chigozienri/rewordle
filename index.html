@@ -130,8 +130,10 @@
     </script>
     <script src="script.js"></script>
     <script>const wordlenumber = document.querySelector('#wordlenumber');
-    wordlenumber.onchange = () => {window.localStorage.clear(), newWordle()};
-    console.log(wordlenumber);
+      
+    document.onreadystatechange = () => {window.localStorage.clear()};
+    // wordlenumber.onchange = () => {newWordle()};
+    // console.log(wordlenumber);
     </script>
     <select name="wordlenumber", id="wordlenumber">
       <option value="1">test1</option>

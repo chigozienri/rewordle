@@ -1,4 +1,3 @@
-function newWordle () {
 (this.wordle = this.wordle || {}),
   (this.wordle.bundle = (function (e) {
     "use strict";
@@ -15744,5 +15743,3 @@ function newWordle () {
       e
     );
   })({}));
-}
-newWordle();

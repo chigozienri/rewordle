@@ -101,4 +101,8 @@ body {
 #links {
   text-align: right;
   margin: 1rem;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
 }
+a, a:visited {
+  color: var(--color-tone-2)}
+

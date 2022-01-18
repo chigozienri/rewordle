@@ -15420,13 +15420,19 @@
                                     var a = "";
                                     switch (e) {
                                       case "present":
-                                        a = "🟨";
+                                        a = (function (e) {
+                                          return e ? "ðŸŸ§" : "ðŸŸ©";
+                                        })(i);
                                         break;
                                       case "absent":
-                                        a = "⬛";
+                                        a = (function (e) {
+                                          return e ? "ðŸŸ¦" : "ðŸŸ¨";
+                                        })(i);
                                         break;
                                       case "correct":
-                                        a = "🟩";
+                                        a = (function (e) {
+                                          return e ? "â¬›" : "â¬œ";
+                                        })(r);
                                     }
                                     d += a;
                                   }

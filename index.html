@@ -36,20 +36,20 @@
     </script>
     <script src="script.js"></script>
     <script>
-      // const wordlenumber = document.querySelector('#wordlenumber');
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const wordlenumber = urlParams.get('number');
-    console.log(wordlenumber);
-    // document.onreadystatechange = () => {window.localStorage.clear()};
-    // wordlenumber.onchange = () => {newWordle()};
-    // console.log(wordlenumber);
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const wordlenumber = urlParams.get('number');
     </script>
-    <select name="wordlenumber", id="wordlenumber">
-      <option value="1">test1</option>
-      <option value="2" selected="selected">test2</option>
-      <option value="3">test3</option>
-    </select>
+    <input type="text" id="wordlenumber"></input>
+    <button id="gotowordle">Go</button>
     <game-app></game-app>
+  
+    <script>
+      const newwordlenumber = document.querySelector('#wordlenumber');
+      const gotowordle = document.querySelector('#gotowordle');
+      var baseurl = window.location.origin;
+      newwordlenumber.value = wordlenumber;
+      gotowordle.onclick = () => {window.location.href = `${baseurl}/?number=${newwordlenumber.value}`};
+    </script>
   </body>
 </html>

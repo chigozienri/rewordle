@@ -14363,10 +14363,8 @@
       return Math.round(t / 864e5);
     }
     function Da(e) {
-      var a,
-        s = Ga(e);
-      s = document.querySelector('#wordlenumber').value;
-      return (a = s % La.length), La[a];
+      var a;
+      return (a = wordlenumber % La.length), La[a];
     }
     function Ga(e) {
       return Na(Ha, e);

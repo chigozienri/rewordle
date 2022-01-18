@@ -35,9 +35,13 @@
       })();
     </script>
     <script src="script.js"></script>
-    <script>const wordlenumber = document.querySelector('#wordlenumber');
-      
-    document.onreadystatechange = () => {window.localStorage.clear()};
+    <script>
+      // const wordlenumber = document.querySelector('#wordlenumber');
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const wordlenumber = urlParams.get('number');
+    console.log(wordlenumber);
+    // document.onreadystatechange = () => {window.localStorage.clear()};
     // wordlenumber.onchange = () => {newWordle()};
     // console.log(wordlenumber);
     </script>

@@ -21,8 +21,8 @@
 
     <meta name="theme-color" content="#6aaa64" />
     <link rel="manifest" href="manifest.json" />
-    <link href="images/wordle_logo_32x32.png" rel="icon shortcut" sizes="3232" />
-    <link href="images/wordle_logo_192x192.png" rel="apple-touch-icon" />
+    <link href="https://www.powerlanguage.co.uk/wordle/images/wordle_logo_32x32.png" rel="icon shortcut" sizes="3232" />
+    <link href="https://www.powerlanguage.co.uk/wordle/images/wordle_logo_192x192.png" rel="apple-touch-icon" />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -38,8 +38,15 @@
     <script>
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-      const wordlenumber = urlParams.get('number');
+      var wordlenumber = urlParams.get('number');
+      if (wordlenumber == null) {
+        var d = Date.now();
+        console.log(d);
+        wordlenumber = 12;
+      }
+      console.log(wordlenumber);
     </script>
+    <label for="wordlenumber">Go to wordle number:</label>
     <input type="text" id="wordlenumber"></input>
     <button id="gotowordle">Go</button>
     <game-app></game-app>

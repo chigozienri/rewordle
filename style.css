@@ -91,3 +91,7 @@
         /* Prevent scrollbar appearing on page transition */
         overflow-y: hidden;
       }
+      #replay {
+        margin: 1rem;
+        padding: 1rem;
+      }

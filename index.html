@@ -11,8 +11,8 @@
     <!-- FB Meta Tags -->
     <meta property="og:url" content="https://www.powerlanguage.co.uk/wordle/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Wordle - A daily word game">
-    <meta property="og:description" content="Guess the hidden word in 6 tries. A new puzzle is available each day.">
+    <meta property="og:title" content="ReWordle - A not so daily word game">
+    <meta property="og:description" content="Guess the hidden word in 6 tries. Old puzz/e.">
     <meta property="og:image" content="https://www.dailywordle.com/images/wordle_og_1200x630.png">
 
     <!-- Twitter Meta Tags -->
@@ -45,9 +45,11 @@
       }
       console.log(wordlenumber);
     </script>
-    <label for="wordlenumber">Go to wordle number:</label>
-    <input type="text" id="wordlenumber"></input>
-    <button id="gotowordle">Go</button>
+    <div id="replay">
+      <label for="wordlenumber">Go to wordle number:</label>
+      <input type="text" id="wordlenumber"></input>
+      <button id="gotowordle">Go</button>
+    </div>
     <game-app></game-app>
   
     <script>

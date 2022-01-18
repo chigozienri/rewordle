@@ -1214,13 +1214,13 @@
         hardMode: !1,
       };
     function za() {
-      var e = window.localStorage.getItem(wa) || JSON.stringify(xa);
+      var e = JSON.stringify(xa);
       return JSON.parse(e);
     }
     function ja(e) {
       var a = za();
       !(function (e) {
-        window.localStorage.setItem(wa, JSON.stringify(e));
+        // window.localStorage.setItem(wa, JSON.stringify(e));
       })(va(a, e));
     }
     var Sa = document.createElement("template");
@@ -14392,7 +14392,7 @@
         averageGuesses: 0,
       };
     function Xa() {
-      var e = window.localStorage.getItem(Ya) || JSON.stringify(Ua);
+      var e = JSON.stringify(Ua);
       return JSON.parse(e);
     }
     function Va(e) {
@@ -14417,7 +14417,7 @@
           }, 0) / o.gamesWon
         )),
         (function (e) {
-          window.localStorage.setItem(Ya, JSON.stringify(e));
+          // window.localStorage.setItem(Ya, JSON.stringify(e));
         })(o);
     }
     var Ka = document.createElement("template");

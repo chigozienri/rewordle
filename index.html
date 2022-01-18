@@ -5,14 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-    <title>Wordle - A daily word game</title>
+    <title>ReWordle - A not so daily word game</title>
     <meta name="description" content="Guess the hidden word in 6 tries. A new puzzle is available each day.">
 
     <!-- FB Meta Tags -->
     <meta property="og:url" content="https://www.powerlanguage.co.uk/wordle/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="ReWordle - A not so daily word game">
-    <meta property="og:description" content="Guess the hidden word in 6 tries. Old puzz/e.">
+    <meta property="og:description" content="Guess the hidden word in 6 tries. Old puzzles are available on demand.">
     <meta property="og:image" content="https://www.dailywordle.com/images/wordle_og_1200x630.png">
 
     <!-- Twitter Meta Tags -->
@@ -39,16 +39,17 @@
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
       var wordlenumber = urlParams.get('n');
-      if (wordlenumber == null) {
-        var d = Date.now();
-        wordlenumber = Math.round((new Date(d).setHours(0, 0, 0, 0) - new Date(2021, 5, 19, 0, 0, 0, 0).setHours(0, 0, 0, 0))/ 864e5);
+      var d = Date.now();
+      var currentwordlenumber = Math.round((new Date(d).setHours(0, 0, 0, 0) - new Date(2021, 5, 19, 0, 0, 0, 0).setHours(0, 0, 0, 0))/ 864e5);
+      if (wordlenumber == null || wordlenumber > currentwordlenumber) {
+        wordlenumber = currentwordlenumber;
       }
-      console.log(wordlenumber);
     </script>
     <div id="replay">
       <label for="wordlenumber">Go to wordle number:</label>
       <input type="text" id="wordlenumber"></input>
       <button id="gotowordle">Go</button>
+      <span id="today" hidden="true">(You have chosen today's wordle)</span>
     </div>
     <game-app></game-app>
   
@@ -58,6 +59,10 @@
       var baseurl = window.location.origin;
       newwordlenumber.value = wordlenumber;
       gotowordle.onclick = () => {window.location.href = `${baseurl}/?n=${newwordlenumber.value}`};
+      
+      if (wordlenumber == currentwordlenumber) {
+        document.querySelector('#today').hidden = false
+      }
     </script>
   </body>
 </html>

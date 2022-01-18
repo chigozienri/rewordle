@@ -81,6 +81,7 @@
 }
 html {
   height: 100%;
+  text-align: center;
 }
 body {
   height: 100%;
@@ -99,4 +100,5 @@ body {
 }
 #links {
   text-align: right;
+  margin: 1rem;
 }

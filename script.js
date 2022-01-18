@@ -14804,11 +14804,11 @@
                         s.appendChild(o),
                         s.setAttribute("open", "");
                     }),
-                  this.shadowRoot
-                    .getElementById("statistics-button")
-                    .addEventListener("click", function (a) {
-                      e.showStatsModal();
-                    }),
+                  // this.shadowRoot
+                  //   .getElementById("statistics-button")
+                  //   .addEventListener("click", function (a) {
+                  //     e.showStatsModal();
+                  //   }),
                   window.addEventListener("resize", this.sizeBoard.bind(this));
               },
             },
@@ -15411,28 +15411,22 @@
                           (l += " ".concat(n ? t : "X", "/").concat(6)),
                             o && (l += "*");
                           var d = "";
-                          console.log(e)
                           return (
                             a.forEach(function (e) {
                               e &&
                                 (e.forEach(function (e) {
+                                  console.log(e)
                                   if (e) {
                                     var a = "";
                                     switch (e) {
-                                      case Ma:
-                                        a = (function (e) {
-                                          return e ? "ðŸŸ§" : "ðŸŸ©";
-                                        })(i);
+                                      case "present":
+                                        a = "🟨";
                                         break;
-                                      case Ia:
-                                        a = (function (e) {
-                                          return e ? "ðŸŸ¦" : "ðŸŸ¨";
-                                        })(i);
+                                      case "absent":
+                                        a = "⬛";
                                         break;
-                                      case Oa:
-                                        a = (function (e) {
-                                          return e ? "â¬›" : "â¬œ";
-                                        })(r);
+                                      case "correct":
+                                        a = "🟩";
                                     }
                                     d += a;
                                   }

@@ -15349,47 +15349,48 @@
               value: function () {
                 var e = this;
                 this.shadowRoot.appendChild(Cs.content.cloneNode(!0));
-                var a = this.shadowRoot.getElementById("statistics"),
-                  s = this.shadowRoot.getElementById("guess-distribution"),
-                  t = Math.max.apply(
-                    Math,
-                    g(Object.values(this.stats.guesses))
-                  );
-                if (
-                  Object.values(this.stats.guesses).every(function (e) {
-                    return 0 === e;
-                  })
-                ) {
-                  // var o = document.createElement("div");
-                  // o.classList.add("no-data"),
-                  //   (o.innerText = "No Data"),
-                  //   s.appendChild(o);
-                } else
-                  // for (
-                  //   var n = 1;
-                  //   n < Object.keys(this.stats.guesses).length;
-                  //   n++
-                  // ) {
-                  //   var r = n,
-                  //     i = this.stats.guesses[n],
-                  //     l = Ts.content.cloneNode(!0),
-                  //     d = Math.max(7, Math.round((i / t) * 100));
-                  //   l.querySelector(".guess").textContent = r;
-                  //   var u = l.querySelector(".graph-bar");
-                  //   if (
-                  //     ((u.style.width = "".concat(d, "%")),
-                  //     "number" == typeof i)
-                  //   ) {
-                  //     (l.querySelector(".num-guesses").textContent = i),
-                  //       i > 0 && u.classList.add("align-right");
-                  //     var c = parseInt(
-                  //       this.getAttribute("highlight-guess"),
-                  //       10
-                  //     );
-                  //     c && n === c && u.classList.add("highlight");
-                  //   }
-                  //   s.appendChild(l);
-                  // }
+                // var a = this.shadowRoot.getElementById("statistics"),
+                //   s = this.shadowRoot.getElementById("guess-distribution"),
+                //   t = Math.max.apply(
+                //     Math,
+                //     g(Object.values(this.stats.guesses))
+                //   );
+                // if (
+                //   Object.values(this.stats.guesses).every(function (e) {
+                //     return 0 === e;
+                //   })
+                // ) {
+                //   var o = document.createElement("div");
+                //   o.classList.add("no-data"),
+                //     (o.innerText = "No Data"),
+                //     s.appendChild(o);
+                // } else
+                //   for (
+                //     var n = 1;
+                //     n < Object.keys(this.stats.guesses).length;
+                //     n++
+                //   ) {
+                //     var r = n,
+                //       i = this.stats.guesses[n],
+                //       l = Ts.content.cloneNode(!0),
+                //       d = Math.max(7, Math.round((i / t) * 100));
+                //     l.querySelector(".guess").textContent = r;
+                //     var u = l.querySelector(".graph-bar");
+                //     if (
+                //       ((u.style.width = "".concat(d, "%")),
+                //       "number" == typeof i)
+                //     ) {
+                //       (l.querySelector(".num-guesses").textContent = i),
+                //         i > 0 && u.classList.add("align-right");
+                //       var c = parseInt(
+                //         this.getAttribute("highlight-guess"),
+                //         10
+                //       );
+                //       c && n === c && u.classList.add("highlight");
+                //     }
+                //     s.appendChild(l);
+                //   }
+                console.log(this.shadowRoot)
                 var p = this.shadowRoot.querySelector(".footer"),
                   m = Is.content.cloneNode(!0);
                 p.appendChild(m),

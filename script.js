@@ -15431,7 +15431,7 @@
                                 }),
                                 (d += "\n"));
                             }),
-                            { text: "".concat(l, "\n\n").concat(d.trimEnd()).concat("\n" + window.location.href) }
+                            { text: "".concat(l, "\n\n").concat(d.trimEnd()).concat("\nReplay at " + window.location.origin + '/?n=' + wordlenumber) }
                           );
                         })({
                           evaluations: e.gameApp.evaluations,

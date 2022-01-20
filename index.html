@@ -81,6 +81,7 @@
       <label for="wordlenumber">Go to wordle number:</label>
       <input type="text" id="wordlenumber"></input>
       <button id="gotowordle">Go</button>
+      <button id="random">Random wordle</button>
       <div id="today" hidden="true">(You have chosen today's wordle)</div>
     </div>
 
@@ -148,6 +149,10 @@
       if (wordlenumber == currentwordlenumber) {
         document.querySelector("#today").hidden = false;
       }
+      const random = document.querySelector("#random");
+      random.onclick = () => {
+        window.location.href = `${baseurl}/?n=${Math.floor(Math.random() * currentwordlenumber)}`;
+      };
     </script>
   </body>
 </html>

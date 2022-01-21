@@ -151,7 +151,7 @@
       }
       const random = document.querySelector("#random");
       random.onclick = () => {
-        window.location.href = `${baseurl}/?n=${Math.floor(Math.random() * currentwordlenumber)}`;
+        window.location.href = `${baseurl}/?n=${Math.ceil(Math.random() * currentwordlenumber)}`;
       };
     </script>
   </body>

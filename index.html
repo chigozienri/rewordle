@@ -66,14 +66,14 @@
     <script>
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-      var wordlenumber = urlParams.get("n");
+      var wordlenumber = parseInt(urlParams.get("n"));
       var d = Date.now();
       var currentwordlenumber = Math.round(
         (new Date(d).setHours(0, 0, 0, 0) -
           new Date(2021, 5, 19, 0, 0, 0, 0).setHours(0, 0, 0, 0)) /
           864e5
       );
-      if (wordlenumber == null || wordlenumber > currentwordlenumber) {
+      if (wordlenumber == null || wordlenumber > currentwordlenumber || wordlenumber < 0 || !Number.isInteger(wordlenumber)) {
         wordlenumber = currentwordlenumber;
       }
     </script>

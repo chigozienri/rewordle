@@ -152,6 +152,12 @@
       random.onclick = () => {
         window.location.href = `${baseurl}/?n=${Math.ceil(Math.random() * currentwordlenumber)}`;
       };
+      
+      // Request https
+      if (location.protocol != 'https:')
+      {
+       location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+      }
     </script>
   </body>
 </html>

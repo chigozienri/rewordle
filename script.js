@@ -1220,7 +1220,7 @@
     function ja(e) {
       var a = za();
       !(function (e) {
-        // window.localStorage.setItem(wa, JSON.stringify(e));
+        window.localStorage.setItem(wa, JSON.stringify(e));
       })(va(a, e));
     }
     var Sa = document.createElement("template");
@@ -14390,7 +14390,7 @@
         averageGuesses: 0,
       };
     function Xa() {
-      var e = JSON.stringify(Ua);
+      var e = window.localStorage.getItem(Ya) || JSON.stringify(Ua);
       return JSON.parse(e);
     }
     function Va(e) {
@@ -14415,7 +14415,7 @@
           }, 0) / o.gamesWon
         )),
         (function (e) {
-          // window.localStorage.setItem(Ya, JSON.stringify(e));
+          window.localStorage.setItem(Ya, JSON.stringify(e));
         })(o);
     }
     var Ka = document.createElement("template");
@@ -14424,7 +14424,7 @@
         .concat(1e3, ";\n  }\n  #system-toaster {\n    z-index: ")
         .concat(
           4e3,
-          ';\n  }\n\n  #game {\n    width: 100%;\n    max-width: var(--game-max-width);\n    margin: 0 auto;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n  }\n  header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: var(--header-height);\n    color: var(--color-tone-1);\n    border-bottom: 1px solid var(--color-tone-4);\n  }\n  header .title {\n    font-weight: 700;\n    font-size: 36px;\n    letter-spacing: 0.2rem;\n    text-transform: uppercase;\n    text-align: center;\n    position: absolute;\n    left: 0;\n    right: 0;\n    pointer-events: none;\n  }\n\n  @media (max-width: 360px) {\n    header .title {\n      font-size: 22px;\n      letter-spacing: 0.1rem;\n    }\n  }\n\n  #board-container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-grow: 1;\n    overflow: hidden;\n  }\n  #board {\n    display: grid;\n    grid-template-rows: repeat(6, 1fr);\n    grid-gap: 5px;\n    padding:10px;\n    box-sizing: border-box;\n  }\n  button.icon {\n    background: none;\n    border: none;\n    cursor: pointer;\n    padding: 0 4px;\n  }\n\n  #debug-tools {\n    position: absolute;\n    bottom: 0;\n  }\n\n  </style>\n  <game-theme-manager>\n    <div id="game">\n      <header>\n        <div class="menu">\n          <button id="help-button" class="icon" aria-label="help">\n            <game-icon icon="help"></game-icon>\n          </button>\n        </div>\n        <div class="title">\n         REWORDLE\n        </div>\n        <div class="menu">\n                   </button>\n          <button id="settings-button" class="icon" aria-label="settings">\n            <game-icon icon="settings"></game-icon>\n          </button>\n        </div>\n      </header>\n        <div id="board-container">\n          <div id="board"></div>\n        </div>\n        <game-keyboard></game-keyboard>\n        <game-modal></game-modal>\n        <game-page></game-page>\n        <div class="toaster" id="game-toaster"></div>\n        <div class="toaster" id="system-toaster"></div>\n    </div>\n  </game-theme-manager>\n  <div id="debug-tools"></div>\n'
+          ';\n  }\n\n  #game {\n    width: 100%;\n    max-width: var(--game-max-width);\n    margin: 0 auto;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n  }\n  header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: var(--header-height);\n    color: var(--color-tone-1);\n    border-bottom: 1px solid var(--color-tone-4);\n  }\n  header .title {\n    font-weight: 700;\n    font-size: 36px;\n    letter-spacing: 0.2rem;\n    text-transform: uppercase;\n    text-align: center;\n    position: absolute;\n    left: 0;\n    right: 0;\n    pointer-events: none;\n  }\n\n  @media (max-width: 360px) {\n    header .title {\n      font-size: 22px;\n      letter-spacing: 0.1rem;\n    }\n  }\n\n  #board-container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-grow: 1;\n    overflow: hidden;\n  }\n  #board {\n    display: grid;\n    grid-template-rows: repeat(6, 1fr);\n    grid-gap: 5px;\n    padding:10px;\n    box-sizing: border-box;\n  }\n  button.icon {\n    background: none;\n    border: none;\n    cursor: pointer;\n    padding: 0 4px;\n  }\n\n  #debug-tools {\n    position: absolute;\n    bottom: 0;\n  }\n\n  </style>\n  <game-theme-manager>\n    <div id="game">\n      <header>\n        <div class="menu">\n          <button id="help-button" class="icon" aria-label="help">\n            <game-icon icon="help"></game-icon>\n          </button>\n        </div>\n        <div class="title">\n         REWORDLE\n        </div>\n        <div class="menu">\n                   </button>\n          <button id="statistics-button" class="icon" aria-label="statistics">\n            <game-icon icon="statistics"></game-icon>\n          </button>\n <button id="settings-button" class="icon" aria-label="settings">\n            <game-icon icon="settings"></game-icon>\n          </button>\n        </div>\n      </header>\n        <div id="board-container">\n          <div id="board"></div>\n        </div>\n        <game-keyboard></game-keyboard>\n        <game-modal></game-modal>\n        <game-page></game-page>\n        <div class="toaster" id="game-toaster"></div>\n        <div class="toaster" id="system-toaster"></div>\n    </div>\n  </game-theme-manager>\n  <div id="debug-tools"></div>\n'
         );
     var Qa = document.createElement("template");
     Qa.innerHTML =
@@ -14804,11 +14804,11 @@
                         s.appendChild(o),
                         s.setAttribute("open", "");
                     }),
-                  // this.shadowRoot
-                  //   .getElementById("statistics-button")
-                  //   .addEventListener("click", function (a) {
-                  //     e.showStatsModal();
-                  //   }),
+                  this.shadowRoot
+                    .getElementById("statistics-button")
+                    .addEventListener("click", function (a) {
+                      e.showStatsModal();
+                    }),
                   window.addEventListener("resize", this.sizeBoard.bind(this));
               },
             },
@@ -15310,16 +15310,16 @@
     }
     var Cs = document.createElement("template");
     Cs.innerHTML =
-      '\n  <style>\n    .container {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n      padding: 16px 0; \n    }\n    h1 {\n      font-weight: 700;\n      font-size: 16px;\n      letter-spacing: 0.5px;\n      text-transform: uppercase;\n      text-align: center;\n      margin-bottom: 10px;\n    }\n  \n    #statistics {\n      display: flex;\n      margin-bottom: \n    }\n\n    .statistic-container {\n      flex: 1;\n    }\n\n    .statistic-container .statistic {\n      font-size: 36px;\n      font-weight: 400;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n      letter-spacing: 0.05em;\n      font-variant-numeric: proportional-nums;\n    }\n\n    .statistic.timer {\n      font-variant-numeric: initial;\n    }\n\n    .statistic-container .label {\n      font-size: 12px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n    }\n\n    #guess-distribution {\n      width: 80%;\n    }\n\n    .graph-container {\n      width: 100%;\n      height: 20px;\n      display: flex;\n      align-items: center;\n      padding-bottom: 4px;\n      font-size: 14px;\n      line-height: 20px;\n    }\n\n    .graph-container .graph {\n      width: 100%;\n      height: 100%;\n      padding-left: 4px;\n    }\n\n    .graph-container .graph .graph-bar {\n      height: 100%;\n      /* Assume no wins */\n      width: 0%;\n      position: relative;\n      background-color: var(--color-absent);\n      display: flex;\n      justify-content: center;\n    }\n\n    .graph-container .graph .graph-bar.highlight {\n      background-color: var(--color-correct);\n    }\n\n    .graph-container .graph .graph-bar.align-right {\n      justify-content: flex-end;\n      padding-right: 8px;\n    }\n\n    .graph-container .graph .num-guesses {\n      font-weight: bold;\n      color: var(--tile-text-color);\n    }\n\n    #statistics,\n    #guess-distribution {\n      padding-bottom: 10px;\n    }\n\n    .footer {\n      display: flex;\n      width: 100%;\n      justify-content: center;\n    }\n\n    .countdown {\n      border-right: 1px solid var(--color-tone-1);\n      padding-right: 12px;\n      width: 50%;\n    }\n\n    .share {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      padding-left: 12px;\n      width: 50%;\n    }\n\n    .no-data {\n      text-align: center;\n    }\n\n    button#share {\n      background-color: var(--key-bg-correct);\n      color: var(--key-evaluated-text-color);\n      font-family: inherit;\n      font-weight: bold;\n      border-radius: 4px;\n      cursor: pointer;\n      border: none;\n      user-select: none;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-transform: uppercase;\n      -webkit-tap-highlight-color: rgba(0,0,0,0.3);\n      width: 80%;\n      font-size: 20px;\n      height: 52px;\n      -webkit-filter: brightness(100%);\n    }\n    button#share:hover {\n      opacity: 0.9;\n    }\n    button#share game-icon {\n      width: 24px;\n      height: 24px;\n      padding-left: 8px;\n    }\n  </style>\n\n  <div class="container">\n     <div class="footer"></div>\n  </div>\n';
-    // var Ls = document.createElement("template");
-    // Ls.innerHTML =
-    //   '\n  <div class="statistic-container">\n    <div class="statistic"></div>\n    <div class="label"></div>\n  </div>\n';
-    // var Ts = document.createElement("template");
-    // Ts.innerHTML =
-    //   '\n    <div class="graph-container">\n      <div class="guess"></div>\n      <div class="graph">\n        <div class="graph-bar">\n          <div class="num-guesses">\n        </div>\n      </div>\n      </div>\n    </div>\n';
+      '\n  <style>\n    .container {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n      padding: 16px 0; \n    }\n    h1 {\n      font-weight: 700;\n      font-size: 16px;\n      letter-spacing: 0.5px;\n      text-transform: uppercase;\n      text-align: center;\n      margin-bottom: 10px;\n    }\n  \n    #statistics {\n      display: flex;\n      margin-bottom: \n    }\n\n    .statistic-container {\n      flex: 1;\n    }\n\n    .statistic-container .statistic {\n      font-size: 36px;\n      font-weight: 400;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n      letter-spacing: 0.05em;\n      font-variant-numeric: proportional-nums;\n    }\n\n    .statistic.timer {\n      font-variant-numeric: initial;\n    }\n\n    .statistic-container .label {\n      font-size: 12px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n    }\n\n    #guess-distribution {\n      width: 80%;\n    }\n\n    .graph-container {\n      width: 100%;\n      height: 20px;\n      display: flex;\n      align-items: center;\n      padding-bottom: 4px;\n      font-size: 14px;\n      line-height: 20px;\n    }\n\n    .graph-container .graph {\n      width: 100%;\n      height: 100%;\n      padding-left: 4px;\n    }\n\n    .graph-container .graph .graph-bar {\n      height: 100%;\n      /* Assume no wins */\n      width: 0%;\n      position: relative;\n      background-color: var(--color-absent);\n      display: flex;\n      justify-content: center;\n    }\n\n    .graph-container .graph .graph-bar.highlight {\n      background-color: var(--color-correct);\n    }\n\n    .graph-container .graph .graph-bar.align-right {\n      justify-content: flex-end;\n      padding-right: 8px;\n    }\n\n    .graph-container .graph .num-guesses {\n      font-weight: bold;\n      color: var(--tile-text-color);\n    }\n\n    #statistics,\n    #guess-distribution {\n      padding-bottom: 10px;\n    }\n\n    .footer {\n      display: flex;\n      width: 100%;\n    }\n\n    .countdown {\n      border-right: 1px solid var(--color-tone-1);\n      padding-right: 12px;\n      width: 50%;\n    }\n\n    .share {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      padding-left: 12px;\n      width: 50%;\n    }\n\n    .no-data {\n      text-align: center;\n    }\n\n    button#share {\n      background-color: var(--key-bg-correct);\n      color: var(--key-evaluated-text-color);\n      font-family: inherit;\n      font-weight: bold;\n      border-radius: 4px;\n      cursor: pointer;\n      border: none;\n      user-select: none;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-transform: uppercase;\n      -webkit-tap-highlight-color: rgba(0,0,0,0.3);\n      width: 80%;\n      font-size: 20px;\n      height: 52px;\n      -webkit-filter: brightness(100%);\n    }\n    button#share:hover {\n      opacity: 0.9;\n    }\n    button#share game-icon {\n      width: 24px;\n      height: 24px;\n      padding-left: 8px;\n    }\n  </style>\n\n  <div class="container">\n    <h1>Statistics</h1>\n    <div id="statistics"></div>\n    <h1>Guess Distribution</h1>\n    <div id="guess-distribution"></div>\n    <div class="footer"></div>\n  </div>\n';
+    var Ls = document.createElement("template");
+    Ls.innerHTML =
+      '\n  <div class="statistic-container">\n    <div class="statistic"></div>\n    <div class="label"></div>\n  </div>\n';
+    var Ts = document.createElement("template");
+    Ts.innerHTML =
+      '\n    <div class="graph-container">\n      <div class="guess"></div>\n      <div class="graph">\n        <div class="graph-bar">\n          <div class="num-guesses">\n        </div>\n      </div>\n      </div>\n    </div>\n';
     var Is = document.createElement("template");
     Is.innerHTML =
-      '\n  <div class="share">\n    <button id="share">\n      Share <game-icon icon="share"></game-icon>\n    </button>\n  </div>\n';
+      '\n  <div class="countdown">\n    <button class="random" onclick="window.location.href = `${baseurl}/?n=${Math.ceil(Math.random() * currentwordlenumber)}`"><h1>Get random wordle</h1></button>\n    </div>\n  <div class="share">\n    <button id="share">\n      Share <game-icon icon="share"></game-icon>\n    </button>\n  </div>\n';
     var Ms = {
         currentStreak: "Current Streak",
         maxStreak: "Max Streak",
@@ -15349,47 +15349,47 @@
               value: function () {
                 var e = this;
                 this.shadowRoot.appendChild(Cs.content.cloneNode(!0));
-                // var a = this.shadowRoot.getElementById("statistics"),
-                //   s = this.shadowRoot.getElementById("guess-distribution"),
-                //   t = Math.max.apply(
-                //     Math,
-                //     g(Object.values(this.stats.guesses))
-                //   );
-                // if (
-                //   Object.values(this.stats.guesses).every(function (e) {
-                //     return 0 === e;
-                //   })
-                // ) {
-                //   var o = document.createElement("div");
-                //   o.classList.add("no-data"),
-                //     (o.innerText = "No Data"),
-                //     s.appendChild(o);
-                // } else
-                //   for (
-                //     var n = 1;
-                //     n < Object.keys(this.stats.guesses).length;
-                //     n++
-                //   ) {
-                //     var r = n,
-                //       i = this.stats.guesses[n],
-                //       l = Ts.content.cloneNode(!0),
-                //       d = Math.max(7, Math.round((i / t) * 100));
-                //     l.querySelector(".guess").textContent = r;
-                //     var u = l.querySelector(".graph-bar");
-                //     if (
-                //       ((u.style.width = "".concat(d, "%")),
-                //       "number" == typeof i)
-                //     ) {
-                //       (l.querySelector(".num-guesses").textContent = i),
-                //         i > 0 && u.classList.add("align-right");
-                //       var c = parseInt(
-                //         this.getAttribute("highlight-guess"),
-                //         10
-                //       );
-                //       c && n === c && u.classList.add("highlight");
-                //     }
-                //     s.appendChild(l);
-                //   }
+                var a = this.shadowRoot.getElementById("statistics"),
+                  s = this.shadowRoot.getElementById("guess-distribution"),
+                  t = Math.max.apply(
+                    Math,
+                    g(Object.values(this.stats.guesses))
+                  );
+                if (
+                  Object.values(this.stats.guesses).every(function (e) {
+                    return 0 === e;
+                  })
+                ) {
+                  var o = document.createElement("div");
+                  o.classList.add("no-data"),
+                    (o.innerText = "No Data"),
+                    s.appendChild(o);
+                } else
+                  for (
+                    var n = 1;
+                    n < Object.keys(this.stats.guesses).length;
+                    n++
+                  ) {
+                    var r = n,
+                      i = this.stats.guesses[n],
+                      l = Ts.content.cloneNode(!0),
+                      d = Math.max(7, Math.round((i / t) * 100));
+                    l.querySelector(".guess").textContent = r;
+                    var u = l.querySelector(".graph-bar");
+                    if (
+                      ((u.style.width = "".concat(d, "%")),
+                      "number" == typeof i)
+                    ) {
+                      (l.querySelector(".num-guesses").textContent = i),
+                        i > 0 && u.classList.add("align-right");
+                      var c = parseInt(
+                        this.getAttribute("highlight-guess"),
+                        10
+                      );
+                      c && n === c && u.classList.add("highlight");
+                    }
+                    s.appendChild(l);
+                  }
                 var p = this.shadowRoot.querySelector(".footer"),
                   m = Is.content.cloneNode(!0);
                 p.appendChild(m),

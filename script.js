@@ -1598,7 +1598,6 @@
         "ultra",
         "robin",
         "cynic",
-        "agora",
         "aroma",
         "caulk",
         "shake",

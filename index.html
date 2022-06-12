@@ -128,13 +128,7 @@
         </svg> -->
         ReWordle by @chigozienri
       </a><br />
-      <a href="https://invisidle.glitch.me/">Too easy? Try Invisidle</a>
-      <img
-        src="https://skinny-decorous-deal.glitch.me/counter.png?fallback=rewordle.glitch.me&color=green"
-        alt=""
-        style="display: none"
-        aria-hidden="true"
-      />
+      <a href="https://chigozie.co.uk/invisidle">Too easy? Try Invisidle</a>
     </div>
 
     <script>
@@ -143,7 +137,7 @@
       var baseurl = window.location.origin;
       newwordlenumber.value = wordlenumber;
       gotowordle.onclick = () => {
-        window.location.href = `${baseurl}/?n=${newwordlenumber.value}`;
+        window.location.href = `${baseurl}/rewordle/?n=${newwordlenumber.value}`;
       };
 
       if (wordlenumber == currentwordlenumber) {
@@ -151,7 +145,7 @@
       }
       const random = document.querySelector("#random");
       random.onclick = () => {
-        window.location.href = `${baseurl}/?n=${Math.ceil(Math.random() * currentwordlenumber)}`;
+        window.location.href = `${baseurl}/rewordle/?n=${Math.ceil(Math.random() * currentwordlenumber)}`;
       };
       
       // Request https

@@ -80,6 +80,7 @@
       <label for="wordlenumber">Go to wordle number:</label>
       <input type="text" id="wordlenumber"></input>
       <button id="gotowordle">Go</button>
+      <button id="nextwordle">Next wordle</button>
       <button id="random">Random wordle</button>
       <div id="today" hidden="true">(You have chosen today's wordle)</div>
       <div>Looking for your stats from before the URL change? Go <a href="https://rewordle.glitch.me/oldstats.html">here</a></div>
@@ -135,14 +136,19 @@
     <script>
       const newwordlenumber = document.querySelector("#wordlenumber");
       const gotowordle = document.querySelector("#gotowordle");
+      const nextwordle = document.querySelector("#nextwordle");
       var baseurl = window.location.origin;
       newwordlenumber.value = wordlenumber;
       gotowordle.onclick = () => {
         window.location.href = `${baseurl}/rewordle/?n=${newwordlenumber.value}`;
       };
+      nextwordle.onclick = () => {
+        window.location.href = `${baseurl}/rewordle/?n=${currentwordlenumber+1}`;
+      };
 
       if (wordlenumber == currentwordlenumber) {
         document.querySelector("#today").hidden = false;
+        nextwordle.hidden = true;
       }
       const random = document.querySelector("#random");
       random.onclick = () => {

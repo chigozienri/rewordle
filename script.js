@@ -15432,7 +15432,7 @@
                                 .concat(
                                   "\nReplay at " +
                                     window.location.origin +
-                                    "/?n=" +
+                                    "/rewordle?n=" +
                                     wordlenumber
                                 ),
                             }
